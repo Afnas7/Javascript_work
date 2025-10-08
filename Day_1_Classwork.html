@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>online store</title>
+</head>
+<body>
+    <h1>Online store</h1>
+    <p>The store sold 5 t-shirts, each for ₹400, and 3 caps, each for ₹150.Total Sale : <span id="demo"></span></p>
+    <p>Change the price of the t-shirts to ₹450,Total sales : <span id="demo2"></span></p> 
+    <script>
+        var shirt_Q = 5
+        var shirt_P =400
+        var caps_Q =3
+        var caps_P =150
+        total = shirt_P*shirt_Q + caps_Q*caps_P
+        var shirt_P =450
+        total2=shirt_P*shirt_Q + caps_Q*caps_P
+        document.getElementById("demo").innerHTML = total
+        document.getElementById("demo2").innerHTML = total2
+    </script>
+    
+</body>
+</html>

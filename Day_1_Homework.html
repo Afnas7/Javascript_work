@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grocery shop</title>
+</head>
+<body>
+    <h1>Grocery shop</h1>
+    <p id="demo"></p> 
+    <script>
+        var item1="rice"
+        var item2="sugar"
+        var item3="wheat"
+        var rice_Q = 5
+        var rice_P =400
+        var sugar_Q =3
+        var sugar_P =150
+        var wheat_Q =4
+        var wheat_P =150
+        cost_rice = rice_P*rice_Q
+        cost_sugar = sugar_P*sugar_Q
+        cost_wheat = wheat_P*wheat_Q
+        total= cost_rice+cost_sugar+cost_wheat
+        console.log( item1 +" " + cost_rice + "  " +item2 +" " + cost_sugar + "  " +item3 +" " + cost_wheat  )
+        console.log("Total Bill is : " + total)
+        sugar_Q=8
+        cost_sugar = sugar_P*sugar_Q
+        total= cost_rice+cost_sugar+cost_wheat
+        console.log("Total Bill after changing quantity is : " + total)
+    </script>
+</body>
+</html>
