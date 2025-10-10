@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>statistics</title>
+</head>
+<!-- You are building a small statistics widget for a website.
+Generate a random whole number between 1 and 100.
+Simulate a user score as a string value (like "75").
+Convert the user score string to a number using type conversion (without using any conditionals).
+Show the difference between the random number and user score.
+Show the rounded square root of the user score.
+Show the π constant (pi) from JavaScript.
+Convert the string "50" to a number using implicit conversion and multiply it by 2. -->
+
+<body>
+    <script>
+        x=Math.floor(Math.random()*100)+1
+        console.log("random number is "+x)
+        user_score="75"
+        user_score=user_score-0
+        console.log("user_score  is "+user_score)
+        console.log(typeof(user_score))
+        console.log("difference between the random number and user score is: "+ (x-user_score))
+        console.log(Math.round(Math.sqrt(user_score)))
+        console.log(Math.PI)
+        y="50"
+        console.log(y*2)
+    </script>
+</body>
+</html>
