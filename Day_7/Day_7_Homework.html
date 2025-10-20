@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event reminder</title>
+</head>
+<!-- Create a simple web-based event reminder tool. The page should take a user's input of a past date (for example, their last birthday) and display:
+The year, month (name, not number), and day of that date.
+How many full years have passed since that date.
+A custom message that says:
+“It has been more than a year since that date.”
+or “It has been less than a year since that date.” -->
+
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    </p>
+    <script>
+        var birthdate=new Date("2024-10-21")
+        var year= birthdate.getFullYear();
+        var month= birthdate.toLocaleString('default', { month: 'long' });
+        var day= birthdate.getDate();
+        console.log(`year=${year},month=${month},day=${day}`)
+        var today=new Date()
+        var passed_year=today.getFullYear()-year
+        if(today.getMonth()<birthdate.getMonth()||(today.getMonth() === birthdate.getMonth() && today.getDate() < birthdate.getDate())){
+            passed_year--;
+        }
+       if (passed_year>=1){
+        document.getElementById("demo1").innerHTML= `It has been more than a year since ${birthdate}.`
+       }
+       else{
+        document.getElementById("demo1").innerHTML=`It has been less than a year since that ${birthdate}.`
+       }
+       </script>
+</body>
+</html>
