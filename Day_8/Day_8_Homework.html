@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+<!-- You are building a simple input system for a small game. The game gives players 5 chances to guess a number between 1 and 5. The game should work like this:
+Ask the player to enter a number between 1 and 5.
+If the number is 3, display: "You guessed it right!" and stop the game.
+If the number is not 3, display: "Wrong guess. Try again."
+If the player enters a number outside the range (not 1 to 5), display "Invalid input" and skip that chance using continue.
+If the player doesn’t guess the correct number within 5 valid chances, display "Game over".
+
+
+You must use:
+A loop
+An if-else statement
+A break statement
+A continue statement
+A switch to display the number they entered in words (e.g., 1 = "One") -->
+
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+        var num;
+        var code;
+        var flag=0;
+        for (var i=0;i<5;i++){
+                code=parseInt( prompt(`Enter a number between 1 and 5`))
+                if (code>5){
+                    console.log("invalid input");
+                    continue;
+                }
+                switch(code){
+                case 1:
+                    num="one"
+                    break;
+                case 2:
+                    num="two"
+                    break;
+                case 3:
+                    num="three"
+                    break;
+                case 4:
+                    num="Four"
+                    break;
+                case 5:
+                    num="Five"
+                    break;
+                }
+                console.log(`The gussed number is ${num}`)
+                
+                if (code==3){
+                    console.log("You guessed it right!")
+                    flag=1
+                    break
+                }
+                else{
+                    console.log("Wrong guess. Try again.")
+                }
+        }
+        if (flag==0){
+            console.log("Game over")
+        }
+    </script>
+</body>
+</html>
