@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book store</title>
+</head>
+<!--  Create a system that stores information about books. Each book has a title, author, and price. Your task is to:
+Create a class named Book.
+Use a constructor to initialize the book title, author, and price.
+Use getter methods to return the book title and author.
+Use a setter method to update the book price only if it is a number and greater than 0.
+Create one object of the Book class, try updating the price using both valid and invalid values, and print the final book details.-->
+<body>
+    <p id="demo"></p>
+    <script>
+        var book = class{
+            constructor(title,author,price){
+                this.book_name=title;
+                this.book_author=author;
+                this.book_price=price;
+            }
+            get gettitle(){
+                return this.book_name;
+            }
+            get getauthor(){
+                return this.book_author;
+            } 
+            set setprice(newprice){
+                if (typeof newprice=== "number" && newprice>0){
+                    this.book_price=newprice
+                }
+                else{
+                    console.log("Invalid price")
+                }
+            }
+        }
+        book1=new book("The Price of Pleasure","Kresley Cole",99)
+        console.log(`${book1.getauthor} ${book1.gettitle}`)
+        book1.setprice=-50;
+        book1.setprice=50;
+        console.log(`Title: ${book1.book_name}  Author: ${book1.book_author}  Price: ₹${book1.book_price}`)
+    </script>
+    
+</body>
+</html>
