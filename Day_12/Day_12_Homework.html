@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple feedback web page</title>
+</head>
+<!-- Create a simple feedback web page that includes:
+A form with:
+    A text input for the user's name
+    A textarea for their feedback
+A submit button
+    When the form is submitted:
+   The input values (name and feedback) should display on the same page without refreshing.
+   A confirmation message (e.g., “Thanks for your feedback!”) should be shown in green.
+   After 5 seconds, the confirmation message should disappear automatically.
+When the mouse hovers over the feedback display, the text should turn blue. When the mouse leaves, it should return to black.-->
+<body>
+    <p id="demo1" ></p>
+    <p id="demo" onmouseover="mOver()" onmouseout="mout()"></p>
+    <form onsubmit="bt(event)">
+        <label for="user">Enter the user name</label>
+        <input type="text" id="name"><br>
+        <label for="textarea">Enter the feedback</label>
+        <textarea name="textarea" id="textbox" rows="5" cols="50"></textarea><br>
+        <button  type="submit">submit</button>
+    </form>
+    <p id="demo2" ></p>
+
+
+    <script>
+        function bt(event){
+            event.preventDefault()
+            var user=document.getElementById("name").value
+            var text=document.getElementById("textbox").value
+            document.getElementById("demo").innerHTML=`feedback:${text}`
+            document.getElementById("demo1").innerHTML=`username:${user}`
+            document.getElementById("demo2").innerHTML="Thanks for your feedback!"
+            document.getElementById("demo2").style.color="green"
+            setTimeout(() => {
+            document.getElementById("demo2").innerHTML = "";
+            }, 5000);
+            
+        }
+        function mOver(){
+            document.getElementById("demo").style.color="blue"
+        }
+        function mout(){
+            document.getElementById("demo").style.color="black"
+        }
+        
+
+    </script>
+    
+    
+</body>
+</html>
